@@ -1,130 +1,222 @@
+/*{
+    border: solid yellow 2px;
+}*/
 
-* {
-    border: 1px solid red;
-}
+/*ASPECTO GENERAL*/
 body {
-    background-color: gainsboro;
-    color: white;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+    background-color: #305252; 
+    color: #E9EB9E;           
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
     margin: 0;
-    padding: 0;
 }
 
-.top {
-    width: 100%;
-    overflow: auto;
-    margin-bottom: 40px;
-}
-
-
+/*CABECERA*/
 header {
-    background-color: gray;
-    text-align: center;
-    padding: 20px;
+    background-color: #305252;
+    color: #E9EB9E;
+    padding: 20px 40px;
+    border-bottom: 2px solid #ACC196; 
 }
 
-header img {
-    width: 80px;
-    height: auto;
-    
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
+.logo img {
+    width: 100px;
+}
+
+/*MENÚ*/
+.menu ul {
     list-style-type: none;
-    margin: 10px;
-    padding: 0;
+    display: flex;
 }
 
-nav li {
-    display: inline;
-    margin: 10px;
+.menu li {
+    margin-right: 25px;
 }
 
-nav a {
+.menu a {
     text-decoration: none;
-    color: #f0b947;
+    color: #E9EB9E;
+    font-weight: bold;
 }
 
-form {
-    margin-top: 10px;
+.menu a:hover {
+    color: #7EA3CC; 
 }
 
-input {
-    padding: 5px;
+/*BUSCADOR*/
+.search input {
+    background-color: #2b2c36;
+    color: #E9EB9E;
+    border: 1px solid #3b3c47;
+    padding: 5px 10px;
 }
 
-/* Introducción */
-h1 {
-    color: #f0b947;
+/*PRESENTACIÓN*/
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
 }
 
-header p {
-    color: #cccccc;
-}
-
-a {
-    color: #f0b947;
-}
-
-/* Secciones */
-section {
-    text-align: center;
-    margin: 40px;
-    padding: 20px;
-    background-color: #2a2a2a;
-}
-
-/* Habilidades */
-article img {
-    margin: 10px;
-    border: 2px solid #f0b947;
-}
-
-/* Portfolio */
-#portfolio img {
-    margin: 10px;
-    border: 2px solid #f0b947;
-}
-
-/* Experiencia */
-#experiencia article {
-    background-color: #333333;
-    border-left: 5px solid #f0b947;
+.intro-texto {
     text-align: left;
-    padding: 10px;
+    width: 280px;
+    margin-right: -90px;
+}
+
+.intro-texto h1 {
+    font-size: 90px;
+    color: #7EA3CC; 
+    margin: 0;
+    width: 50px;
+}
+
+.intro-texto h2 {
+    color: #E9EB9E; 
+    font-size: 60px;
+    margin: 5px;
+}
+
+.intro-texto a {
+    background-color: #7EA3CC;
+    color: #3D2925; 
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.intro-texto a:hover {
+    background-color: #ACC196; 
+    color: #3D2925;
+}
+
+.foto img {
+    width: 380px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 80%;
+    opacity: 0.8; 
+    margin: 0px;
+}
+
+/*CONTENIDO GENERAL*/
+main {
+    width: 80%;
+    margin: 40px auto;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    color: #E9EB9E;
+    border-bottom: 3px solid #3D2925; 
+    display: inline-block;
     margin-bottom: 20px;
 }
 
-#experiencia h3 {
-    color: white;
-}
-
-#experiencia p em {
-    color: #f0b947;
-}
-
-ul {
-    color: #dddddd;
-}
-
-/* Testimonios */
-#testimonios {
-    font-style: italic;
-    color: #f0b947;
-    border-left: 5px solid #f0b947;
-    margin: 20px auto;
-    width: 60%;
-}
-
-/* Contacto */
-#contacto a {
-    color: #f0b947;
-}
-
-/* Footer */
-footer {
-    background-color: #2a2a2a;
+/*SOBRE MÍ*/
+#sobre-mi p {
     text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+
+/*HABILIDADES*/
+.skills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+    justify-items: center;
+    align-items: center;
+}
+
+.skill {
+    text-align: center;  
+}
+
+.skill img {
+    background-color: #2b2c36;
     padding: 15px;
-    color: #cccccc;
+    border-radius: 10px;
+}
+
+.skill img:hover {
+    background-color: #7EA3CC; 
+}
+
+.skill p {
+    margin-top: 10px;
+    color: #E9EB9E; 
+    font-weight: bold;
+}
+/*PORTFOLIO*/
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-items: center;
+}
+
+.projects img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.projects img:hover {
+    transform: scale(1.6);
+}
+
+/*EXPERIENCIA*/
+.exp {
+    background-color: #2b2c36;
+    padding: 20px;
+    border-left: 5px solid #3D2925;
+    margin-bottom: 25px;
+}
+
+.exp h3 {
+    color: #7EA3CC;
+    margin-top: 0;
+}
+
+/*TESTIMONIO*/
+#testimonios {
+    background-color: #2b2c36;
+    color: #E9EB9E;
+    text-align: center;
+    font-style: italic;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/*CONTACTO*/
+#contacto a {
+    color: #7EA3CC;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contacto a:hover {
+    text-decoration: underline;
+    color: #ACC196;
+}
+
+/*FOOTER*/
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #ACC196;
+    color: #E9EB9E;
+    background-color: #305252;
 }
