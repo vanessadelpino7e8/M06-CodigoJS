@@ -1,0 +1,130 @@
+
+* {
+    border: 1px solid red;
+}
+body {
+    background-color: gainsboro;
+    color: white;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    width: 100%;
+    overflow: auto;
+    margin-bottom: 40px;
+}
+
+
+header {
+    background-color: gray;
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+    
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f0b947;
+}
+
+form {
+    margin-top: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+/* Introducción */
+h1 {
+    color: #f0b947;
+}
+
+header p {
+    color: #cccccc;
+}
+
+a {
+    color: #f0b947;
+}
+
+/* Secciones */
+section {
+    text-align: center;
+    margin: 40px;
+    padding: 20px;
+    background-color: #2a2a2a;
+}
+
+/* Habilidades */
+article img {
+    margin: 10px;
+    border: 2px solid #f0b947;
+}
+
+/* Portfolio */
+#portfolio img {
+    margin: 10px;
+    border: 2px solid #f0b947;
+}
+
+/* Experiencia */
+#experiencia article {
+    background-color: #333333;
+    border-left: 5px solid #f0b947;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#experiencia h3 {
+    color: white;
+}
+
+#experiencia p em {
+    color: #f0b947;
+}
+
+ul {
+    color: #dddddd;
+}
+
+/* Testimonios */
+#testimonios {
+    font-style: italic;
+    color: #f0b947;
+    border-left: 5px solid #f0b947;
+    margin: 20px auto;
+    width: 60%;
+}
+
+/* Contacto */
+#contacto a {
+    color: #f0b947;
+}
+
+/* Footer */
+footer {
+    background-color: #2a2a2a;
+    text-align: center;
+    padding: 15px;
+    color: #cccccc;
+}
