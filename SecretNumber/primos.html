@@ -7,7 +7,7 @@
 <body>
     <h1>Ejercicios JavaScript</h1>
 
-    <!-- ===================== NÚMEROS PRIMOS ===================== -->
+   
 
     <h2>Números Primos</h2>
     <label>Inicio: <input type="number" id="inicio"></label>
@@ -15,8 +15,7 @@
     <button onclick="mostrarPrimos()">Mostrar Primos</button>
     <p id="resultadoPrimos"></p>
 
-    <!-- ===================== NÚMERO SECRETO ===================== -->
-
+   
     <h2>Juego del Número Secreto</h2>
     <button onclick="jugarNumeroSecreto()">Jugar</button>
     <p id="resultadoSecreto"></p>
@@ -24,12 +23,11 @@
 
     <script>
 
-        // ----------- NÚMEROS PRIMOS -----------------
 
         function esPrimo(num) {
             if (num < 2) return false;
 
-            // Comprobamos hasta la raíz cuadrada (Math.sqrt)
+            
             for (let i = 2; i <= Math.sqrt(num); i++) {
                 if (num % i === 0) return false;
             }
@@ -49,7 +47,7 @@
                 "Números primos: " + (primos.length ? primos.join(", ") : "Ninguno");
         }
 
-        // ----------- NÚMERO SECRETO -----------------
+        
 
         function jugarNumeroSecreto() {
 
