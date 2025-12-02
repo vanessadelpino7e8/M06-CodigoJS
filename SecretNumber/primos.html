@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Números Primos y Número Secreto</title>
+</head>
+<body>
+    <h1>Ejercicios JavaScript</h1>
+
+    <!-- ===================== NÚMEROS PRIMOS ===================== -->
+
+    <h2>Números Primos</h2>
+    <label>Inicio: <input type="number" id="inicio"></label>
+    <label>Fin: <input type="number" id="fin"></label>
+    <button onclick="mostrarPrimos()">Mostrar Primos</button>
+    <p id="resultadoPrimos"></p>
+
+    <!-- ===================== NÚMERO SECRETO ===================== -->
+
+    <h2>Juego del Número Secreto</h2>
+    <button onclick="jugarNumeroSecreto()">Jugar</button>
+    <p id="resultadoSecreto"></p>
+
+
+    <script>
+
+        // ----------- NÚMEROS PRIMOS -----------------
+
+        function esPrimo(num) {
+            if (num < 2) return false;
+
+            // Comprobamos hasta la raíz cuadrada (Math.sqrt)
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function mostrarPrimos() {
+            const inicio = parseInt(document.getElementById("inicio").value);
+            const fin = parseInt(document.getElementById("fin").value);
+
+
+            for (let i = inicio; i <= fin; i++) {
+                if (esPrimo(i)) primos.push(i);
+            }
+
+            document.getElementById("resultadoPrimos").innerText =
+                "Números primos: " + (primos.length ? primos.join(", ") : "Ninguno");
+        }
+
+        // ----------- NÚMERO SECRETO -----------------
+
+        function jugarNumeroSecreto() {
+
+            const secreto = Math.floor(Math.random() * 100) + 1;
+            let intentos = 0;
+            let mensaje = "";
+            let adivinar;
+
+            do {
+                adivinar = prompt("Adivina el número (1-100):");
+
+                if (adivinar === null) return; // por si cancela
+
+                adivinar = Number(adivinar);
+                intentos++;
+
+                if (adivinar > secreto) mensaje = "El número es menor";
+                else if (adivinar < secreto) mensaje = "El número es mayor";
+                else mensaje = "¡Correcto!";
+
+                alert(mensaje);
+
+            } while (adivinar !== secreto);
+
+            document.getElementById("resultadoSecreto").innerText =
+                `Has acertado en ${intentos} intentos.`;
+        }
+
+    </script>
+
+</body>
+</html>
