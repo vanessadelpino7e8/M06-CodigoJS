@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios Bucles (Consola en página)</title>
+
+    <style>
+        #consola {
+            margin-top: 20px;
+            padding: 10px;
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            background: #f3f3f3;
+            white-space: pre;   /* mantiene saltos de línea */
+            overflow-y: scroll; /* para poder ver mucho texto */
+            font-family: monospace;  /* ← NECESARIO para centrar el árbol */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Ejercicios de Bucles</h1>
+
+<button onclick="ej1()">1. Imprimir 1 al 10</button><br><br>
+<button onclick="ej2()">2. Suma de 1 a N</button><br><br>
+<button onclick="ej3()">3. Pares en un rango</button><br><br>
+<button onclick="ej4()">4. Triángulo</button><br><br>
+<button onclick="ej5()">5. Árbol de Navidad</button>
+
+<div id="consola"></div>
+
+<script>
+
+    let consola = document.getElementById("consola");
+
+    function limpiar() {
+        consola.textContent = "";
+    }
+
+    function escribir(texto) {
+        consola.textContent += texto + "\n";
+    }
+
+
+    // 1. Imprimir 1 al 10 de tres maneras
+    
+    function ej1() {
+
+        limpiar();
+
+        escribir("=== WHILE ===");
+        let i = 1;
+        while (i <= 10) {
+            escribir(i);
+            i++;
+        }
+
+        escribir("=== DO WHILE ===");
+        let j = 1;
+        do {
+            escribir(j);
+            j++;
+        } while (j <= 10);
+
+        escribir("=== FOR ===");
+        for (let k = 1; k <= 10; k++) {
+            escribir(k);
+        }
+    }
+
+
+   
+    // 2. Suma de 1 a N
+
+    function ej2() {
+
+        limpiar();
+
+        let N = parseInt(prompt("Introduce un número N:"));
+        if (isNaN(N) || N < 1) {
+            alert("Número no válido.");
+            return;
+        }
+
+        let suma = 0;
+        let x = 1;
+
+        while (x <= N) {
+            suma = suma + x;
+            x++;
+        }
+
+        escribir("La suma de 1 a " + N + " es: " + suma);
+    }
+
+
+
+    // 3. Números pares en un rango
+    
+    function ej3() {
+
+        limpiar();
+
+        let inicio = parseInt(prompt("Número inicial:"));
+        let fin = parseInt(prompt("Número final:"));
+
+        if (isNaN(inicio) || isssNaN(fin) || inicio > fin) {
+            alert("Rango no válido.");
+            return;
+        }
+
+        escribir("Pares entre " + inicio + " y " + fin + ":");
+
+        for (let n = inicio; n <= fin; n++) {
+            if (n % 2 === 0) {
+                escribir(n);
+            }
+        }
+    }
+
+
+
+    // 4. Triángulo de asteriscos
+    
+    function ej4() {
+
+        limpiar();
+
+        let filas = parseInt(prompt("Número de filas:"));
+        if (isNaN(filas) || filas < 1) {
+            alert("Número no válido.");
+            return;
+        }
+
+        escribir("Triángulo:");
+        let linea = "";
+
+        for (let i = 1; i <= filas; i++) {
+            linea = linea + "*";
+            escribir(linea);
+        }
+    }
+
+
+    // ---------------------------------------------------------
+    // 5. Árbol de Navidad (centrado y bien hecho)
+    // ---------------------------------------------------------
+    function ej5() {
+
+        limpiar();
+
+        let altura = parseInt(prompt("Altura del árbol:"));
+        if (isNaN(altura) || altura < 1) {
+            alert("Número no válido.");
+            return;
+        }
+
+        escribir("Árbol de Navidad:\n");
+
+        // COPA (centrada con estrellas impares)
+        for (let fila = 1; fila <= altura; fila++) {
+
+            let espacios = "";
+            let estrellas = "";
+
+            // espacios a la izquierda
+            let e = 0;
+            while (e < (altura - fila)) {
+                espacios = espacios + " ";
+                e++;
+            }
+
+            // estrellas impares (1, 3, 5, 7...)
+            let s = 0;
+            while (s < (2 * fila - 1)) {
+                estrellas = estrellas + "*";
+                s++;
+            }
+
+            escribir(espacios + estrellas);
+        }
+
+        // TRONCO
+        let troncoEsp = "";
+        let t = 0;
+
+        while (t < altura - 1) {
+            troncoEsp = troncoEsp + " ";
+            t++;
+        }
+
+        escribir(troncoEsp + "|");
+        escribir(troncoEsp + "|");
+    }
+
+</script>
+
+</body>
+</html>
