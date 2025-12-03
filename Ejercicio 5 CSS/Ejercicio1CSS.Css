@@ -1,0 +1,54 @@
+
+*/*{
+    border: 2px solid black;
+}*/
+h1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+.Subtitles {
+display: flex;
+background-color: gray;
+margin: 5px;
+padding-left: 20px;
+}
+
+.Subtitles h2+h2{
+    margin-left: 562px;
+}
+
+li{
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+}
+a{
+    color: blue;
+}
+ul{
+    background-color: grey;
+    padding: 10px;
+    margin: 5px;
+ }
+ .section{
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+ }
+ .section img {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+.section p {
+    text-align: justify;
+}
+footer.footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    margin-top: 20px;
+}

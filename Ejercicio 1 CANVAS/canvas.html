@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>canvas{
+        border: solid black 2px;
+    }</style>
+<body>
+    <h1>mi primer </h1>
+    <canvas id="canvas-box" width="200" height="200"></canvas>
+    <canvas id="canvas-box2" width="200" height="200"></canvas>
+    <canvas id="canvas-box3" width="200" height="200"></canvas>
+    <canvas id="canvas-box4" width="200" height="200"></canvas>
+<script type="application/javascript">
+   window.onload = function () {
+    canvasbox();
+    canvasbox2();
+    canvasbox3();
+    canvasbox4();
+   }
+   function canvasbox()
+   {var canvas = document.getElementById("canvas-box");
+     if (canvas.getContext) {
+       var ctx = canvas.getContext("2d");
+       //Un rectangulo rojo
+       
+       var gradient = ctx.createLinearGradient(60, 10,50, 50);
+     gradient.addColorStop(0, "black");
+     gradient.addColorStop(1, "yellow");
+
+     ctx.fillStyle = gradient;
+       ctx.fillRect(60, 10, 50, 50);
+     }
+    }
+
+    function canvasbox2()
+   {var canvas = document.getElementById("canvas-box2");
+     if (canvas.getContext) {
+       var ctx = canvas.getContext("2d");
+       //Un rectangulo rojo - relleno
+       ctx.fillStyle = "rgb(200,0,0)";
+       ctx.fillRect(50, 50, 120, 120);
+       //Borro
+       ctx.clearRect(70, 70, 60, 60);
+       //Un rectangulo azul solo línea
+       ctx.strokeStyle="blue";
+       ctx.strokeRect(80,80,40,40);
+
+     }
+    }
+    
+
+    function canvasbox3()
+   {var canvas = document.getElementById("canvas-box3");
+     if (canvas.getContext) {
+       var ctx = canvas.getContext("2d");
+       //Un rectangulo rojo
+       ctx.moveTo(100,20);
+       ctx.lineTo(50,150);
+       ctx.lineTo(150,150);
+       ctx.lineTo(100,20);
+       ctx.fillStyle = "red";
+       ctx.lineWidth=8;
+       ctx.fill();
+       
+
+     }
+    }
+      function canvasbox4()
+   {var canvas = document.getElementById("canvas-box4");
+     if (canvas.getContext) {
+       var ctx = canvas.getContext("2d");
+    
+       ctx.arc(100,100,50,degToRad(30),degToRad(330));
+       ctx.lineTo(100,100)
+       ctx.fillStyle= "yellow";
+       ctx.fill();
+
+       ctx.beginPath();
+       ctx.arc(90,70,5,degToRad(0),degToRad(360));
+       ctx.fillStyle="black";
+       ctx.fill();
+
+     }
+    }
+    function degToRad(degrees) {
+     return degrees * Math.PI / 180;
+};
+
+ </script>
+    
+</body>
+</html>
+

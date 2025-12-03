@@ -1,0 +1,46 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+h1{
+    color: red;
+}
+h2{
+    color: gray;
+    text-decoration: underline;
+}
+p
+{
+    font-style: italic
+}
+span{
+    color: red;
+}
+ol{
+    list-style-type: upper-roman;
+}
+ul{
+    list-style: square;
+}
+.cyan{
+    background-color: cyan;
+    color: blue;
+}
+.green { 
+    background-color: green;
+    color: lightgreen;
+}
+.red
+{
+    background-color: red;
+    color: greenyellow;
+}
+.lime
+{
+    background-color: lime;
+    color: red;
+}
+.green2, a
+{
+    color: green;
+}
