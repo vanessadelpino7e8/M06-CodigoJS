@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .Tecla {
+            width: 50px;
+            height: 50px;
+            background-color: lightgray;
+            border: 1px solid black;
+            display: inline-block;
+            margin: 5px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+        }
+
+        #teclado {
+        display: flex;           
+        flex-wrap: wrap;        
+        width: 350px;           
+        margin: 0 auto;          
+        gap: 5px;               
+    }
+
+    </style>
+</head>
+<body>
+    <div id="teclado"></div>
+
+    <script>
+        let teclado = document.getElementById("teclado");
+
+        for (let i = 1; i < 101; i++) {
+            let tecla = document.createElement("div");
+            tecla.className = "Tecla";
+            tecla.innerHTML = "<p>" + i + "</p>";
+
+            if((i%2)==0)
+            tecla.style.backgroundColor="blue";
+
+
+            teclado.appendChild(tecla);
+        }
+    </script>
+</body>
+</html>
